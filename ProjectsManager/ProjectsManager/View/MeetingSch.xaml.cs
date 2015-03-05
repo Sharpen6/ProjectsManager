@@ -23,5 +23,13 @@ namespace ProjectsManager
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (dt_1.SelectedDate != null && txt_end.Text != "" && txt_start.Text != "")
+            {
+                lv_1.Items.Add("Date:" + dt_1 + " " + txt_start.Text + "-" + txt_end.Text);
+            }
+        }
     }
 }

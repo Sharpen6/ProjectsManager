@@ -102,7 +102,7 @@
         </Border>
         <StackPanel Grid.Column="3" Grid.Row="1" >
             <TextBlock  TextAlignment="Right" >                                
-            <Hyperlink FontSize="16" Command="{Binding SomeCOmmand, ElementName=window}" CommandParameter="{Binding}">תאם מפגש
+            <Hyperlink FontSize="16" Click="Hyperlink_Click" >תאם מפגש
             </Hyperlink>
             </TextBlock>
             <TextBlock Text="צור קשר" TextDecorations="Underline" Foreground="#FFAEAFB0" FontSize="16" TextAlignment="Right" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown"/>
