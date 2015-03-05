@@ -10,8 +10,8 @@ C:\Users\User\Documents\GitHub\ProjectsManager\ProjectsManager\ProjectsManager\o
 C:\Users\User\Documents\GitHub\ProjectsManager\ProjectsManager\ProjectsManager\obj\Debug\ProjectsManager.pdb
 C:\Users\User\Documents\GitHub\ProjectsManager\ProjectsManager\ProjectsManager\obj\Debug\App.g.cs
 C:\Users\User\Documents\GitHub\ProjectsManager\ProjectsManager\ProjectsManager\obj\Debug\View\Demo.baml
-C:\Users\User\Documents\GitHub\ProjectsManager\ProjectsManager\ProjectsManager\obj\Debug\View\MainWindow.baml
 C:\Users\User\Documents\GitHub\ProjectsManager\ProjectsManager\ProjectsManager\obj\Debug\View\Window1.baml
 C:\Users\User\Documents\GitHub\ProjectsManager\ProjectsManager\ProjectsManager\obj\Debug\View\Demo.g.cs
-C:\Users\User\Documents\GitHub\ProjectsManager\ProjectsManager\ProjectsManager\obj\Debug\View\MainWindow.g.cs
 C:\Users\User\Documents\GitHub\ProjectsManager\ProjectsManager\ProjectsManager\obj\Debug\View\Window1.g.cs
+C:\Users\User\Documents\GitHub\ProjectsManager\ProjectsManager\ProjectsManager\obj\Debug\View\StudentMain.baml
+C:\Users\User\Documents\GitHub\ProjectsManager\ProjectsManager\ProjectsManager\obj\Debug\View\StudentMain.g.cs

@@ -10,24 +10,24 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace ProjectsManager
 {
     /// <summary>
-    /// Interaction logic for Demo.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class Demo : Window
+    public partial class StudentMain : Window
     {
-        public Demo()
+        public StudentMain()
         {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void TextBlock_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            StudentMain stMain = new StudentMain();
-            stMain.ShowDialog();
+
         }
     }
 }
