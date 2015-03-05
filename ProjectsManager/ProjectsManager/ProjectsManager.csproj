@@ -69,6 +69,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controller\meetingsController.cs" />
+    <Compile Include="Model\MeetingsModel.cs" />
+    <Compile Include="Model\Model.cs" />
     <Compile Include="View\MeetingSch.xaml.cs">
       <DependentUpon>MeetingSch.xaml</DependentUpon>
     </Compile>
@@ -132,9 +135,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controller\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
       <Visible>False</Visible>
