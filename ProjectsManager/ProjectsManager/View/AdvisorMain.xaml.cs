@@ -17,11 +17,17 @@ namespace ProjectsManager
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class AdvisorMain : Window
     {
-        public Window1()
+        public AdvisorMain()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            AssignmentCr Acr = new AssignmentCr();
+            Acr.Show();
         }
     }
 }

@@ -27,40 +27,40 @@
                 <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text=":רשימת תזכורות" VerticalAlignment="Top" Foreground="White" TextDecorations="Underline"/>
                 <Border Background="#FFF1B9B9" Margin="5" Padding="5">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                        <CheckBox Margin="0,0,10,0"/>
+                        <CheckBox Margin="0,0,10,0" IsEnabled="False"/>
                         <TextBlock Text="הגשת דוח מסכם סמסטר ב"/>
                         <TextBlock  Text="1/6" Margin="10,0,0,0"/>
                     </StackPanel>
                 </Border>
                 <Border Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Margin="5" Padding="5">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                        <CheckBox Margin="0,0,10,0"/>
+                        <CheckBox Margin="0,0,10,0" IsEnabled="False"/>
                         <TextBlock Text="הגשת פוסטר"/>
                         <TextBlock  Text="6/6" Margin="10,0,0,0"/>
                     </StackPanel>
                 </Border>
                 <Border Background="#FF98D49E" Margin="5" Padding="5">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                        <CheckBox Margin="0,0,10,0" Background="{x:Null}" IsChecked="True"/>
+                        <CheckBox Margin="0,0,10,0" Background="{x:Null}" IsChecked="True" IsEnabled="False"/>
                         <TextBlock Text="הגשת מאמר"/>
                         <TextBlock  Text="14/6" Margin="10,0,0,0"/>
                     </StackPanel>
                 </Border>
                 <Border Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Margin="5" Padding="5">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                        <CheckBox Margin="0,0,10,0"/>
+                        <CheckBox Margin="0,0,10,0" IsEnabled="False"/>
                         <TextBlock Text="הגשת סקר ספרות"/>
                         <TextBlock  Text="24/6" Margin="10,0,0,0"/>
                     </StackPanel>
                 </Border>
                 <Border Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Margin="5" Padding="5">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                        <CheckBox Margin="0,0,10,0"/>
+                        <CheckBox Margin="0,0,10,0" IsEnabled="False"/>
                         <TextBlock Text="פגישת סיכום עם המנחה" />
                         <TextBlock  Text="25/6" Margin="10,0,0,0"/>
                     </StackPanel>
                 </Border>
-                <Calendar  Width="255" Height="208" DisplayDate="2014-06-04" SelectedDate="2014-06-05" HorizontalAlignment="Center"/>
+                <Calendar  Width="255" Height="208" DisplayDate="2014-06-04" SelectedDate="2014-06-05" HorizontalAlignment="Center" IsEnabled="False"/>
             </StackPanel>
         </Border>
 
@@ -96,12 +96,12 @@
                         <TextBlock Margin="10,0,0,0" Text="1/6"/>
                     </StackPanel>
                 </Border>
-                <Button Content="רשום הודעה חדשה" Margin="10,10" HorizontalAlignment="Left" Grid.Row="1"  VerticalAlignment="Top" Width="262" Grid.ColumnSpan="3"/>
+                <Button Content="רשום הודעה חדשה" Margin="10,10" HorizontalAlignment="Left" Grid.Row="1"  VerticalAlignment="Top" Width="262" Grid.ColumnSpan="3" IsEnabled="False"/>
 
             </StackPanel>
         </Border>
         <StackPanel Grid.Column="3" Grid.Row="1" >
-            <TextBlock  TextAlignment="Right" >                                
+            <TextBlock  TextAlignment="Right" FontWeight="Bold" >                                
             <Hyperlink FontSize="16" Click="Hyperlink_Click" >תאם מפגש
             </Hyperlink>
             </TextBlock>

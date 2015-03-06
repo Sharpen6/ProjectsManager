@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ProjectsManager.Model
+{
+    class Assignment
+    {
+        string desc;
+        string creationDate;
+        string dueDate;
+    }
+}

@@ -29,5 +29,11 @@ namespace ProjectsManager
             StudentMain stMain = new StudentMain();
             stMain.Show();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            AdvisorMain amMain = new AdvisorMain();
+            amMain.Show();
+        }
     }
 }

@@ -1,0 +1,96 @@
+﻿<Window x:Class="ProjectsManager.AdvisorMain"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="AdvisorMain" Height="414.373" Width="661.334" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="120"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Image Grid.Row="0"  Margin="5" Grid.ColumnSpan="3" Source="..\Resources\bar.jpg" Stretch="UniformToFill" />
+
+        <StackPanel Grid.Column="0" Grid.Row="1">
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text=":סנן לפי" VerticalAlignment="Top"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" SelectedIndex="0">
+                    <ComboBoxItem Content="מוכן להצגה"></ComboBoxItem>
+                </ComboBox>
+
+                <ComboBox  VerticalAlignment="Top" Width="91" SelectedIndex="0">
+                    <ComboBoxItem Content="בסטטוס"/>
+                </ComboBox>
+            </StackPanel>
+            <Border HorizontalAlignment="Center" VerticalAlignment="Top">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF939CB2" Offset="1"/>
+                        <GradientStop Color="#FF666666" Offset="0.007"/>
+                        <GradientStop Color="#FF6D8086" Offset="0.109"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <StackPanel>
+                    <Border Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Margin="5" Padding="5">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                            <TextBlock Text="תיעוד תנועות תושבים" />
+                            <CheckBox Margin="10,0,10,0"/>
+                        </StackPanel>
+                    </Border>
+                    <Border Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Margin="5" Padding="5">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                            <TextBlock Text="מאגר נתונים המתמחר עלות" />
+                            <CheckBox Margin="10,0,10,0"/>
+                        </StackPanel>
+                    </Border>
+                    <Button Grid.Column="1" Grid.Row="1" Margin="0,50,0,5" Content="שלח מטלה לקבוצה" HorizontalAlignment="Center" VerticalAlignment="Top" Width="160" Click="Button_Click"/>
+
+                </StackPanel>
+            </Border>
+        </StackPanel>
+
+
+        <Border Grid.Column="1" Grid.Row="1" BorderBrush="#FF342F95" BorderThickness="1">
+            <StackPanel HorizontalAlignment="Right" Background="White">
+                <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="הודעות חדשות והתראות" VerticalAlignment="Top" FontWeight="Bold" TextDecorations="Underline"/>
+                <Border Margin="0,5,5,5" Background="White" HorizontalAlignment="Right">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <TextBlock Text="(מנחה)" HorizontalAlignment="Right" Margin="10,0,10,0" FontStyle="Italic"/>
+                        <TextBlock Text="שמתי לב ששכחת להגיש את זה בתא" HorizontalAlignment="Right"/>
+                        <TextBlock Margin="10,0,0,0" Text="3/6"/>
+                    </StackPanel>
+                </Border>
+                <Border Margin="0,5,5,5" Background="White" HorizontalAlignment="Right" Width="281">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <TextBlock Text="(מנחה)" HorizontalAlignment="Right" Margin="10,0,10,0" FontStyle="Italic"/>
+                        <TextBlock Text="?נפגשים ב 25.6" HorizontalAlignment="Right"/>
+                        <TextBlock Margin="10,0,0,0" Text="3/6"/>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Column="1" Margin="0,5,5,5" Background="White" HorizontalAlignment="Right">
+                    <StackPanel  Orientation="Horizontal" HorizontalAlignment="Right">
+                        <TextBlock Text="(דוח מסכם סמסטר ב)" HorizontalAlignment="Right" Margin="10,0,10,0" FontStyle="Italic"/>
+                        <TextBlock Text="שים לב! קובץ לא הוגש" HorizontalAlignment="Right"/>
+                        <TextBlock Margin="10,0,0,0" Text="1/6"/>
+                    </StackPanel>
+                </Border>
+
+
+            </StackPanel>
+        </Border>
+        <StackPanel Grid.Column="2" Grid.Row="1" >
+            <StackPanel Grid.Column="3" Grid.Row="1" >
+                <TextBlock Text="תאם מפגש" TextDecorations="Underline" Foreground="#FFAEAFB0" FontSize="16" TextAlignment="Right"/>
+                <TextBlock Text="צור קשר" TextDecorations="Underline" Foreground="#FFAEAFB0" FontSize="16" TextAlignment="Right"/>
+                <TextBlock Text="מתן ציונים" TextDecorations="Underline" Foreground="#FFAEAFB0" FontSize="16" TextAlignment="Right"/>
+                <TextBlock Text="ניהול קבצים" TextDecorations="Underline" Foreground="#FFAEAFB0" FontSize="16" TextAlignment="Right"/>
+                <TextBlock Text="ערעורים" TextDecorations="Underline" Foreground="#FFAEAFB0" FontSize="16" TextAlignment="Right"/>
+            </StackPanel>
+
+        </StackPanel>
+
+    </Grid>
+</Window>

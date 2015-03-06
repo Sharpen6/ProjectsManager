@@ -28,10 +28,10 @@ namespace ProjectsManager.Model
             object ans = AdoHelper.ExecuteScalar(query);
             return (int)ans;
         }
-        public static int AddNewMeeting(string location, string desc)
+        public static int AddNewMeeting(string location, string desc,string creator)
         {
             int meetingID = getNextMeetingNum()+1;
-            string query = "INSERT INTO tbl_Meeting VALUES (" + meetingID + ",'" + location + "' , '" + desc + "');";
+            string query = "INSERT INTO tbl_Meeting VALUES (" + meetingID + ",'" + location + "' , '" + desc + "', '"+creator+"');";
             AdoHelper.ExecuteNonQuery(query);
             return meetingID;
         }

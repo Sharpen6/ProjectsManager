@@ -73,15 +73,22 @@
     <Compile Include="Model\Meeting.cs" />
     <Compile Include="Model\MeetingsModel.cs" />
     <Compile Include="Model\Model.cs" />
+    <Compile Include="View\AssignmentCr.xaml.cs">
+      <DependentUpon>AssignmentCr.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MeetingSch.xaml.cs">
       <DependentUpon>MeetingSch.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Demo.xaml.cs">
       <DependentUpon>Demo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Window1.xaml.cs">
-      <DependentUpon>Window1.xaml</DependentUpon>
+    <Compile Include="View\AdvisorMain.xaml.cs">
+      <DependentUpon>AdvisorMain.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\AssignmentCr.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\MeetingSch.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -102,7 +109,7 @@
       <DependentUpon>StudentMain.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\Window1.xaml">
+    <Page Include="View\AdvisorMain.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

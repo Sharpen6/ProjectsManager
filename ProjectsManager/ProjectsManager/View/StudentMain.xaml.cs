@@ -42,7 +42,8 @@ namespace ProjectsManager
         private void Hyperlink_Click(object sender, RoutedEventArgs e)
         {
             MeetingSch ms = new MeetingSch();
-            ms.Show();
+            ms.ShowDialog();
+            MessageBox.Show("כאן הסתיים הדמו, הפגישה נשמרה וניתן לצפות בה, ומיילים נשלחו למשתתפי האירוע");
         }
 
         internal Meeting getMeetingData()
