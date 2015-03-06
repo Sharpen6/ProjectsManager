@@ -70,6 +70,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Controller\projectDataController.cs" />
+    <Compile Include="Controller\StudentsDataController.cs" />
     <Compile Include="Model\Meeting.cs" />
     <Compile Include="Model\MeetingsModel.cs" />
     <Compile Include="Model\Model.cs" />

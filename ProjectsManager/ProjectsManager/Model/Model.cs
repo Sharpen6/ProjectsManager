@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjectsManager.Model
 {
-    class Model
+    public class Model
     {
     }
 }

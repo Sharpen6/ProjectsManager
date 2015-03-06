@@ -20,10 +20,18 @@ namespace ProjectsManager
     /// </summary>
     public partial class MeetingSch : Window
     {
+
+        public Meeting m_meetingData;
+
         public MeetingSch()
         {
+            Controller.StudentsDataController pc = new Controller.StudentsDataController(this);
             InitializeComponent();
+            OnScreenOpened();
+
         }
+
+        public event Action OnScreenOpened;
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -35,6 +43,15 @@ namespace ProjectsManager
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            if (lb_studs.SelectedItems.Count==0)
+            {
+                MessageBox.Show("לא נבחרו סטודנטים");
+                return;
+            }
+            m_meetingData.location = txt_Location.Text;
+            m_meetingData.desc = txt_desc.Text;
+            m_meetingData.hours = lb_hours.Items.Cast<String>().ToList();
+            m_meetingData.students = lb_studs.SelectedItems.Cast<String>().ToList();
             DialogResult = true;
         }
     }

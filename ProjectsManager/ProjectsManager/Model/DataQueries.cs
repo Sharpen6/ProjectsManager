@@ -9,11 +9,11 @@ namespace ProjectsManager.Model
 {
     class DataQueries
     {
-        public static DataTable GetAllDepartments()
+        public static DataTable getAllStudents()
         {
             try
             {
-                string query = "Select * from Departments";
+                string query = "Select * from tbl_Student";
                 DataTable dt = AdoHelper.ExecuteDataTable(query);
                 return dt;
             }

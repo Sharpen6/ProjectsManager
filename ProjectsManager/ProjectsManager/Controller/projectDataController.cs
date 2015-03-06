@@ -10,11 +10,8 @@ namespace ProjectsManager.Controller
 {
     class projectDataController
     {
-        StudentMain m_View;
-        MeetingsModel m_Model;
-
-        
-
+        public StudentMain m_View;
+        public MeetingsModel m_Model;
 
         public projectDataController(StudentMain w)
         {
@@ -27,6 +24,8 @@ namespace ProjectsManager.Controller
         {
             m_Model.addMeeting(m_View.getMeetingData());
         }
+
+
 
 
     }

@@ -24,12 +24,16 @@ namespace ProjectsManager
         public StudentMain()
         {
             Controller.projectDataController pc = new Controller.projectDataController(this);
+            m_model = pc.m_Model;
             InitializeComponent();
         }
 
+        public Model.Model m_model;
+
+
         public event Action OnNewMeetingWasCreated;
 
-        private Meeting m_lastestMeeting;
+        private Meeting m_lastestMeeting; 
         public Meeting lastestMeeting
         {
             get { return m_lastestMeeting; }
@@ -46,12 +50,7 @@ namespace ProjectsManager
             ms.ShowDialog();
             if ((bool)ms.DialogResult)
             {
-                Meeting m = new Meeting();
-                m.location = ms.txt_Location.Text;
-                m.desc = ms.txt_desc.Text;
-                m.hours = ms.lb_hours.Items.Cast<String>().ToList();
-                m.students = ms.lb_studs.Items.Cast<String>().ToList();
-                lastestMeeting = m;
+                lastestMeeting = ms.m_meetingData;
 
                 if (OnNewMeetingWasCreated!=null)
                     OnNewMeetingWasCreated();
