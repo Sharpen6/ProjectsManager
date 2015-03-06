@@ -69,7 +69,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Controller\meetingsController.cs" />
+    <Compile Include="Controller\projectDataController.cs" />
+    <Compile Include="Model\Meeting.cs" />
     <Compile Include="Model\MeetingsModel.cs" />
     <Compile Include="Model\Model.cs" />
     <Compile Include="View\MeetingSch.xaml.cs">

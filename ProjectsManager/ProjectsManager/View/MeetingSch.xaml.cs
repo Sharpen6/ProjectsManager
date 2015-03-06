@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjectsManager.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,8 +29,13 @@ namespace ProjectsManager
         {
             if (dt_1.SelectedDate != null && txt_end.Text != "" && txt_start.Text != "")
             {
-                lv_1.Items.Add("Date:" + dt_1 + " " + txt_start.Text + "-" + txt_end.Text);
+               lb_hours.Items.Add("Date:" + dt_1 + " " + txt_start.Text + "-" + txt_end.Text);
             }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            DialogResult = true;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjectsManager.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,9 +23,19 @@ namespace ProjectsManager
     {
         public StudentMain()
         {
+            Controller.projectDataController pc = new Controller.projectDataController(this);
             InitializeComponent();
         }
 
+        public event Action OnNewMeetingWasCreated;
+
+        private Meeting m_lastestMeeting;
+        public Meeting lastestMeeting
+        {
+            get { return m_lastestMeeting; }
+            set { m_lastestMeeting = value; }
+        }
+        
         private void TextBlock_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
 
@@ -32,7 +43,24 @@ namespace ProjectsManager
         private void Hyperlink_Click(object sender, RoutedEventArgs e)
         {
             MeetingSch ms = new MeetingSch();
-            ms.Show();
+            ms.ShowDialog();
+            if ((bool)ms.DialogResult)
+            {
+                Meeting m = new Meeting();
+                m.location = ms.txt_Location.Text;
+                m.desc = ms.txt_desc.Text;
+                m.hours = ms.lb_hours.Items.Cast<String>().ToList();
+                m.students = ms.lb_studs.Items.Cast<String>().ToList();
+                lastestMeeting = m;
+
+                if (OnNewMeetingWasCreated!=null)
+                    OnNewMeetingWasCreated();
+            }
+        }
+
+        internal Meeting getMeetingData()
+        {
+            return lastestMeeting;
         }
     }
 }
