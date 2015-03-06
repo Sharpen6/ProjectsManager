@@ -48,17 +48,6 @@ namespace ProjectsManager.Model
             AdoHelper.ExecuteNonQuery(query);
             return meetingID;
         }
-        public static void UpdateDept(int dptCode, string dptName, string dptLocation)
-        {
-            string query = "Update Departments set DepName='" + dptName + "', Location='" + dptLocation + "' where DepCode=" + dptCode;
-            AdoHelper.ExecuteNonQuery(query);
-        }
-        public static void DeleteDept(int dptCode)
-        {
-            string query = "Delete from Departments where DepCode=" + dptCode;
-            AdoHelper.ExecuteNonQuery(query);
-        }
-
 
 
         internal static void AddMeetingParticipant(int meetingNum, string item)
