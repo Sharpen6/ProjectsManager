@@ -11,7 +11,8 @@ namespace ProjectsManager.Controller
     {
         internal void addMeeting(Meeting p)
         {
-            throw new NotImplementedException();
+            int num = DataQueries.getNextMeetingNum();
+            DataQueries.AddNewMeeting(p.location, p.desc);
         }
 
         internal List<string> getStudents()

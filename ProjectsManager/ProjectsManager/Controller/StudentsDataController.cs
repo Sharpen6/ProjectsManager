@@ -14,7 +14,8 @@ namespace ProjectsManager.Controller
         {
             m_View = m;
             m_Model = new MeetingsModel();
-            m.OnScreenOpened += new Action(getStudents);
+            m_View.OnScreenOpened += new Action(getStudents);
+            m_View.OnNewMeetingWasCreated += new Action(getNewMeetingData);
         }
 
         private void getStudents()
@@ -24,6 +25,11 @@ namespace ProjectsManager.Controller
              {
                  m_View.lb_studs.Items.Add(stud);
              }
+        }
+
+        private void getNewMeetingData()
+        {
+            m_Model.addMeeting(m_View.m_meetingData);
         }
     }
 }

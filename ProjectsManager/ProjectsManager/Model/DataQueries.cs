@@ -22,10 +22,16 @@ namespace ProjectsManager.Model
                 throw ex;
             }
         }
-        public static void AddNewDept(int dptCode, string dptName, string dptLocation)
+        public static int getNextMeetingNum()
         {
-            string query = "Insert into Departments values(" + dptCode + " , '" + dptName + "' , '" +
-           dptLocation + "')";
+            string query = "SELECT LAST(ID) FROM tbl_Meeting;";
+            object ans = AdoHelper.ExecuteScalar(query);
+            return (int)ans;
+        }
+        public static void AddNewMeeting(string location, string desc)
+        {
+            int meetingID = getNextMeetingNum()+1;
+            string query = "INSERT INTO tbl_Meeting VALUES ("+meetingID+",'" + location + "' , '" + desc + "');";
             AdoHelper.ExecuteNonQuery(query);
         }
         public static void UpdateDept(int dptCode, string dptName, string dptLocation)

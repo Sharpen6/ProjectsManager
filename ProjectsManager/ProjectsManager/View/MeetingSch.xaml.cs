@@ -32,7 +32,7 @@ namespace ProjectsManager
         }
 
         public event Action OnScreenOpened;
-
+        public event Action OnNewMeetingWasCreated;
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (dt_1.SelectedDate != null && txt_end.Text != "" && txt_start.Text != "")
@@ -48,11 +48,18 @@ namespace ProjectsManager
                 MessageBox.Show("לא נבחרו סטודנטים");
                 return;
             }
+            if (lb_hours.Items.Count == 0)
+            {
+                MessageBox.Show("לא נבחרו שעות לפגישה");
+                return;
+            }
+            m_meetingData = new Meeting();
             m_meetingData.location = txt_Location.Text;
             m_meetingData.desc = txt_desc.Text;
             m_meetingData.hours = lb_hours.Items.Cast<String>().ToList();
             m_meetingData.students = lb_studs.SelectedItems.Cast<String>().ToList();
-            DialogResult = true;
+            OnNewMeetingWasCreated();
+            Close();
         }
     }
 }

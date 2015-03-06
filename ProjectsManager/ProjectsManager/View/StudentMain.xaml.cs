@@ -23,15 +23,10 @@ namespace ProjectsManager
     {
         public StudentMain()
         {
-            Controller.projectDataController pc = new Controller.projectDataController(this);
-            m_model = pc.m_Model;
             InitializeComponent();
         }
 
         public Model.Model m_model;
-
-
-        public event Action OnNewMeetingWasCreated;
 
         private Meeting m_lastestMeeting; 
         public Meeting lastestMeeting
@@ -47,14 +42,7 @@ namespace ProjectsManager
         private void Hyperlink_Click(object sender, RoutedEventArgs e)
         {
             MeetingSch ms = new MeetingSch();
-            ms.ShowDialog();
-            if ((bool)ms.DialogResult)
-            {
-                lastestMeeting = ms.m_meetingData;
-
-                if (OnNewMeetingWasCreated!=null)
-                    OnNewMeetingWasCreated();
-            }
+            ms.Show();
         }
 
         internal Meeting getMeetingData()
