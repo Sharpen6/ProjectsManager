@@ -26,7 +26,7 @@ namespace ProjectsManager
             InitializeComponent();
         }
 
-        public Model.Model m_model;
+        //public Model.Model m_model;
 
         private Meeting m_lastestMeeting; 
         public Meeting lastestMeeting

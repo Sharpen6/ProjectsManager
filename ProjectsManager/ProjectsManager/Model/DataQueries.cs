@@ -22,6 +22,19 @@ namespace ProjectsManager.Model
                 throw ex;
             }
         }
+        public static DataTable getAllTaskTypes()
+        {
+            try
+            {
+                string query = "Select * from tbl_TaskType";
+                DataTable dt = AdoHelper.ExecuteDataTable(query);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public static int getNextMeetingNum()
         {
             string query = "SELECT LAST(ID) FROM tbl_Meeting;";
@@ -56,6 +69,19 @@ namespace ProjectsManager.Model
         internal static void AddMeetingHours(int meetingNum, string item)
         {
             string query = "INSERT INTO tbl_MeetingHours Values ('" + item + "', '" + meetingNum + "',FALSE);";
+            AdoHelper.ExecuteNonQuery(query);
+        }
+        public static int getNextAssignmentNum()
+        {
+            string query = "SELECT LAST(TaskID) FROM tbl_Task;";
+            object ans = AdoHelper.ExecuteScalar(query);
+            return (int)ans;
+        }
+        internal static void AddNewTask(string p1, string p2, string p3, int item, string p4)
+        {
+            int taskID = getNextAssignmentNum()+1;
+            string query = "INSERT INTO tbl_Task Values (" + taskID + ",'" + p1 + "','" + p2
+                + "'," + item + ",'" + p3 + "','" + p4 + "',0,0);";
             AdoHelper.ExecuteNonQuery(query);
         }
     }

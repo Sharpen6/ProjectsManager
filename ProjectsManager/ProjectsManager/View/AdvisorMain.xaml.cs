@@ -26,7 +26,15 @@ namespace ProjectsManager
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            AssignmentCr Acr = new AssignmentCr();
+
+            List<int> selectedProjects = new List<int>();
+            if ((bool)ckb_1.IsChecked)
+                selectedProjects.Add(123);
+            if ((bool)ckb_2.IsChecked)
+                selectedProjects.Add(321);
+            if (selectedProjects.Count == 0)
+                return;
+            AssignmentCr Acr = new AssignmentCr(selectedProjects);
             Acr.Show();
         }
     }

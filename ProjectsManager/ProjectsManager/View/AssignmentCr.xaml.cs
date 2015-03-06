@@ -21,18 +21,24 @@ namespace ProjectsManager
     public partial class AssignmentCr : Window
     {
 
-        //public Meeting m_meetingData;
+        public Assignment m_assignmentData;
 
-        public AssignmentCr()
+        public AssignmentCr(List<int> selectedProjects)
         {
-            //Controller.StudentsDataController pc = new Controller.StudentsDataController(this);
+            m_assignmentData = new Assignment();
+            /*foreach (var item in selectedProjects)
+            {
+                m_assignmentData.projects.Add(item);
+            }*/
+            m_assignmentData.projects = selectedProjects;
+            Controller.TasksController pc = new Controller.TasksController(this);
             InitializeComponent();
-            //OnScreenOpened();
+            OnScreenOpened();
 
         }
 
         public event Action OnScreenOpened;
-        public event Action OnNewMeetingWasCreated;
+        public event Action OnNewAssignmentWasCreated;
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             /*if (dt_1.SelectedDate != null && txt_end.Text != "" && txt_start.Text != "")
@@ -43,23 +49,21 @@ namespace ProjectsManager
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            /*if (lb_studs.SelectedItems.Count==0)
+            if (txt_desc.Text=="")
             {
-                MessageBox.Show("לא נבחרו סטודנטים");
+                MessageBox.Show("עליך לכתוב תיאור");
                 return;
             }
-            if (lb_hours.Items.Count == 0)
+            if (dt_1.SelectedDate==null)
             {
-                MessageBox.Show("לא נבחרו שעות לפגישה");
+                MessageBox.Show("לא נבחר תאריך הגשה");
                 return;
             }
-            m_meetingData = new Meeting();
-            m_meetingData.location = txt_Location.Text;
-            m_meetingData.desc = txt_desc.Text;
-            m_meetingData.hours = lb_hours.Items.Cast<String>().ToList();
-            m_meetingData.students = lb_studs.SelectedItems.Cast<String>().ToList();
-            OnNewMeetingWasCreated();
-            Close();*/
+            m_assignmentData.dueDate=dt_1.SelectedDate.ToString();
+            m_assignmentData.desc = txt_desc.Text;
+            m_assignmentData.creationDate = DateTime.UtcNow.ToString();
+            OnNewAssignmentWasCreated();
+            Close();
         }
     }
 }

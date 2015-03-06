@@ -7,7 +7,7 @@ using System.Text;
 
 namespace ProjectsManager.Controller
 {
-    public class MeetingsModel : Model.Model
+    public class MeetingsModel
     {
         internal void addMeeting(Meeting p)
         {

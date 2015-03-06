@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace ProjectsManager.Model
 {
-    class Assignment
+    public class Assignment
     {
-        string desc;
-        string creationDate;
-        string dueDate;
+        public string desc;
+        public string creationDate;
+        public string dueDate;
+        public List<int> projects = new List<int>();
     }
 }
