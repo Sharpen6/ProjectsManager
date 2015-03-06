@@ -20,7 +20,7 @@ namespace ProjectsManager.Controller
             List<string> ans = new List<string>();
             foreach (DataRow row in dt.Rows)
             {
-                ans.Add(row[1].ToString() + row[2].ToString());
+                ans.Add(row[1].ToString() + " " +row[2].ToString());
             }
             return ans;
         }

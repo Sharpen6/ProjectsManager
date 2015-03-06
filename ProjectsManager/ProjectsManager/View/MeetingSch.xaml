@@ -19,7 +19,7 @@
         <Label Content=":מיקום" HorizontalAlignment="Right"  VerticalAlignment="Top" Margin="0,186,220.4,0" Height="26" Width="43"/>
         <DatePicker Name="dt_1" HorizontalAlignment="Left" Margin="236,137,0,0" VerticalAlignment="Top" Width="118" SelectedDateFormat="Short"/>
         <ListBox Name="lb_hours" HorizontalAlignment="Left" Height="74" Margin="4,58,0,0" VerticalAlignment="Top" Width="350"/>
-        <ListBox Name="lb_studs" HorizontalAlignment="Left" Height="100" Margin="154,186,0,0" VerticalAlignment="Top" Width="200" SelectionMode="Extended"/>
+        <ListBox Name="lb_studs" HorizontalAlignment="Left" Height="100" Margin="154,186,0,0" VerticalAlignment="Top" Width="200" SelectionMode="Multiple"/>
 
     </Grid>
 </Window>
