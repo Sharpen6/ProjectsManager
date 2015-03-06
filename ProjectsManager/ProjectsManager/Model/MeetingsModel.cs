@@ -11,8 +11,15 @@ namespace ProjectsManager.Controller
     {
         internal void addMeeting(Meeting p)
         {
-            int num = DataQueries.getNextMeetingNum();
-            DataQueries.AddNewMeeting(p.location, p.desc);
+            int meetingNum = DataQueries.AddNewMeeting(p.location, p.desc);
+            foreach (string item in p.students)
+            {
+                DataQueries.AddMeetingParticipant(meetingNum, item);
+            }
+            foreach (string item in p.hours)
+            {
+                DataQueries.AddMeetingHours(meetingNum, item);
+            }
         }
 
         internal List<string> getStudents()

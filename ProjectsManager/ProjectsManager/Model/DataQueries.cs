@@ -28,11 +28,12 @@ namespace ProjectsManager.Model
             object ans = AdoHelper.ExecuteScalar(query);
             return (int)ans;
         }
-        public static void AddNewMeeting(string location, string desc)
+        public static int AddNewMeeting(string location, string desc)
         {
             int meetingID = getNextMeetingNum()+1;
-            string query = "INSERT INTO tbl_Meeting VALUES ("+meetingID+",'" + location + "' , '" + desc + "');";
+            string query = "INSERT INTO tbl_Meeting VALUES (" + meetingID + ",'" + location + "' , '" + desc + "');";
             AdoHelper.ExecuteNonQuery(query);
+            return meetingID;
         }
         public static void UpdateDept(int dptCode, string dptName, string dptLocation)
         {
@@ -43,6 +44,19 @@ namespace ProjectsManager.Model
         {
             string query = "Delete from Departments where DepCode=" + dptCode;
             AdoHelper.ExecuteNonQuery(query);
-        }
+        }
+
+
+
+        internal static void AddMeetingParticipant(int meetingNum, string item)
+        {
+            string query = "INSERT INTO tbl_StudentsInMeetings VALUES ('" + item + "', " + meetingNum + ");";
+            AdoHelper.ExecuteNonQuery(query);
+        }
+        internal static void AddMeetingHours(int meetingNum, string item)
+        {
+            string query = "INSERT INTO tbl_MeetingHours Values ('" + item + "', '" + meetingNum + "',FALSE);";
+            AdoHelper.ExecuteNonQuery(query);
+        }
     }
 }
