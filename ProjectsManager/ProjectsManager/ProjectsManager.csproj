@@ -99,7 +99,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\StudentMain.xaml">
+    <Page Include="View\AdvisorMainMeeting.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -107,8 +107,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="View\StudentMain.xaml.cs">
-      <DependentUpon>StudentMain.xaml</DependentUpon>
+    <Compile Include="View\AdvisorMainMeeting.xaml.cs">
+      <DependentUpon>AdvisorMainMeeting.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\AdvisorMain.xaml">

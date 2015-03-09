@@ -26,7 +26,7 @@ namespace ProjectsManager
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            StudentMain stMain = new StudentMain();
+            AdvisorMainMeeting stMain = new AdvisorMainMeeting();
             stMain.Show();
         }
 

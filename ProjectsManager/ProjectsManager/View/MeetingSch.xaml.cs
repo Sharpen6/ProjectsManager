@@ -37,7 +37,7 @@ namespace ProjectsManager
         {
             if (dt_1.SelectedDate != null && txt_end.Text != "" && txt_start.Text != "")
             {
-               lb_hours.Items.Add("Date:" + dt_1 + " " + txt_start.Text + "-" + txt_end.Text);
+               lb_hours.Items.Add("Date: " + dt_1.SelectedDate.Value.ToShortDateString() + " " + txt_start.Text + "-" + txt_end.Text);
             }
         }
 
@@ -58,6 +58,7 @@ namespace ProjectsManager
             m_meetingData.desc = txt_desc.Text;
             m_meetingData.hours = lb_hours.Items.Cast<String>().ToList();
             m_meetingData.students = lb_studs.SelectedItems.Cast<String>().ToList();
+            m_meetingData.header = txt_Header.Text;
             OnNewMeetingWasCreated();
             Close();
         }

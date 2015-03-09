@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\User\Documents\GitHub\ProjectsManager\ProjectsManager\ProjectsManager\obj\Debug\
+D:\sagi\ProjectsManager\ProjectsManager\ProjectsManager\obj\Debug\
 ProjectsManager
 none
 false
 DEBUG;TRACE
-C:\Users\User\Documents\GitHub\ProjectsManager\ProjectsManager\ProjectsManager\App.xaml
-5-206860237
+D:\sagi\ProjectsManager\ProjectsManager\ProjectsManager\App.xaml
+5-986986058
 
-21-434503114
+21-1067938134
 131478842535
-View\AssignmentCr.xaml;View\MeetingSch.xaml;View\Demo.xaml;View\StudentMain.xaml;View\AdvisorMain.xaml;
+View\AssignmentCr.xaml;View\MeetingSch.xaml;View\Demo.xaml;View\AdvisorMainMeeting.xaml;View\AdvisorMain.xaml;
 
 False
 

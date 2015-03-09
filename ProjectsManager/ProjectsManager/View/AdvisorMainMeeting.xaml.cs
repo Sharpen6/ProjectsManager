@@ -19,9 +19,9 @@ namespace ProjectsManager
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class StudentMain : Window
+    public partial class AdvisorMainMeeting : Window
     {
-        public StudentMain()
+        public AdvisorMainMeeting()
         {
             InitializeComponent();
         }
