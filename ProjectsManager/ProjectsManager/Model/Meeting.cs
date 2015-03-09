@@ -12,5 +12,6 @@ namespace ProjectsManager.Model
         public List<string> hours = new List<string>();
         public string location;
         public string desc;
+        public string header;
     }
 }

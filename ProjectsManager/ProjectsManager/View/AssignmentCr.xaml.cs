@@ -39,13 +39,7 @@ namespace ProjectsManager
 
         public event Action OnScreenOpened;
         public event Action OnNewAssignmentWasCreated;
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            /*if (dt_1.SelectedDate != null && txt_end.Text != "" && txt_start.Text != "")
-            {
-               lb_hours.Items.Add("Date:" + dt_1 + " " + txt_start.Text + "-" + txt_end.Text);
-            }*/
-        }
+
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
@@ -59,9 +53,9 @@ namespace ProjectsManager
                 MessageBox.Show("לא נבחר תאריך הגשה");
                 return;
             }
-            m_assignmentData.dueDate=dt_1.SelectedDate.ToString();
+            m_assignmentData.dueDate=dt_1.SelectedDate.Value.ToShortDateString();
             m_assignmentData.desc = txt_desc.Text;
-            m_assignmentData.creationDate = DateTime.UtcNow.ToString();
+            m_assignmentData.creationDate = DateTime.Now.ToShortDateString();
             OnNewAssignmentWasCreated();
             Close();
         }

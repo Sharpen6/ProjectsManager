@@ -46,17 +46,20 @@
                             <TextBlock Text="מאגר נתונים המתמחר עלות" />
                             <CheckBox Name="ckb_2" Margin="10,0,10,0" IsEnabled="False"/>
                         </StackPanel>
+                        
                     </Border>
+                    
                     <Button Grid.Column="1" Grid.Row="1" Margin="0,50,0,5" Content="שלח מטלה לקבוצה" HorizontalAlignment="Center" VerticalAlignment="Top" Width="160" IsEnabled="False"/>
-
+                    <Calendar/>
                 </StackPanel>
             </Border>
+            
         </StackPanel>
 
 
 
         <Border BorderBrush="#FF342F95" BorderThickness="1" Grid.Column="1" Grid.Row="1">
-            <StackPanel VerticalAlignment="Top"   HorizontalAlignment="Right">
+            <StackPanel VerticalAlignment="Top"   HorizontalAlignment="Center">
                 <StackPanel.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="White" Offset="0"/>

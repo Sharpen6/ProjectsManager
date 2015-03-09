@@ -41,10 +41,10 @@ namespace ProjectsManager.Model
             object ans = AdoHelper.ExecuteScalar(query);
             return (int)ans;
         }
-        public static int AddNewMeeting(string location, string desc,string creator)
+        public static int AddNewMeeting(string location, string desc,string creator,string header,string currentDate)
         {
             int meetingID = getNextMeetingNum()+1;
-            string query = "INSERT INTO tbl_Meeting VALUES (" + meetingID + ",'" + location + "' , '" + desc + "', '"+creator+"');";
+            string query = "INSERT INTO tbl_Meeting VALUES (" + meetingID + ",'" + location + "' , '" + desc + "', '"+creator+"', '"+header+"','"+currentDate+"','');";
             AdoHelper.ExecuteNonQuery(query);
             return meetingID;
         }
