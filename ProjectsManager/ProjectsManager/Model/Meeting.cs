@@ -8,10 +8,11 @@ namespace ProjectsManager.Model
 {
     public class Meeting
     {
-        public List<string> students = new List<string>();
+        public List<int> students = new List<int>();
         public List<string> hours = new List<string>();
         public string location;
         public string desc;
         public string header;
+        public string creator;
     }
 }

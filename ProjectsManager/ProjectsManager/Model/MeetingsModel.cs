@@ -5,14 +5,14 @@ using System.Data;
 using System.Linq;
 using System.Text;
 
-namespace ProjectsManager.Controller
+namespace ProjectsManager.Model
 {
     public class MeetingsModel
     {
         internal void addMeeting(Meeting p)
         {
             int meetingNum = DataQueries.AddNewMeeting(p.location, p.desc, "Professor tester",p.header,DateTime.Now.ToShortDateString());
-            foreach (string item in p.students)
+            foreach (int item in p.students)
             {
                 DataQueries.AddMeetingParticipant(meetingNum, item);
             }
@@ -22,13 +22,17 @@ namespace ProjectsManager.Controller
             }
         }
 
-        internal List<string> getStudents()
+        public bool checkForDoubleHours(string advisor,string hour)
+        {
+            return DataQueries.CheckHours(advisor, hour);
+        }
+        internal List<Student> getStudents()
         {
             DataTable dt = DataQueries.getAllStudents();
-            List<string> ans = new List<string>();
+            List<Student> ans = new List<Student>();
             foreach (DataRow row in dt.Rows)
             {
-                ans.Add(row[1].ToString() + " " +row[2].ToString());
+                ans.Add(new Student((int)row[0], row[1]+" "+row[2]));
             }
             return ans;
         }

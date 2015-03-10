@@ -23,9 +23,12 @@ namespace ProjectsManager
 
         public Meeting m_meetingData;
 
+        public MeetingsModel m_meetingModel;
+
         public MeetingSch()
         {
-            Controller.StudentsDataController pc = new Controller.StudentsDataController(this);
+            Controller.MeetingController pc = new Controller.MeetingController(this);
+            m_meetingModel = pc.m_Model;
             InitializeComponent();
             OnScreenOpened();
 
@@ -35,9 +38,17 @@ namespace ProjectsManager
         public event Action OnNewMeetingWasCreated;
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (dt_1.SelectedDate != null && txt_end.Text != "" && txt_start.Text != "")
+            string date = "Date: "+dt_1.SelectedDate.Value.ToShortDateString() + " " + txt_start.Text + "-" + txt_end.Text;
+            foreach (string item in lb_hours.Items)
             {
-               lb_hours.Items.Add("Date: " + dt_1.SelectedDate.Value.ToShortDateString() + " " + txt_start.Text + "-" + txt_end.Text);
+                if (item == date) return;
+            }
+            if (m_meetingModel.checkForDoubleHours("Professor tester",date))
+            {    
+                if (dt_1.SelectedDate != null && txt_end.Text != "" && txt_start.Text != "")
+                {
+                   lb_hours.Items.Add(date);
+                }
             }
         }
 
@@ -57,10 +68,22 @@ namespace ProjectsManager
             m_meetingData.location = txt_Location.Text;
             m_meetingData.desc = txt_desc.Text;
             m_meetingData.hours = lb_hours.Items.Cast<String>().ToList();
-            m_meetingData.students = lb_studs.SelectedItems.Cast<String>().ToList();
+
+            m_meetingData.students = getAllSelectedStudsID();
+                
             m_meetingData.header = txt_Header.Text;
             OnNewMeetingWasCreated();
             Close();
+        }
+
+        private List<int> getAllSelectedStudsID()
+        {
+            List<int> ans = new List<int>();
+            foreach (ListBoxItem item in lb_studs.SelectedItems)
+	        {
+                ans.Add(((Student)item.Tag).id);
+	        }
+            return ans;
         }
     }
 }

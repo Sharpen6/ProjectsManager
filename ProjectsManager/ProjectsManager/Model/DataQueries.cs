@@ -49,10 +49,16 @@ namespace ProjectsManager.Model
             return meetingID;
         }
 
-
-        internal static void AddMeetingParticipant(int meetingNum, string item)
+        internal static bool CheckHours(string advisorName,string hour)
         {
-            string query = "INSERT INTO tbl_StudentsInMeetings VALUES ('" + item + "', " + meetingNum + ");";
+            string query = "select count(*) from tbl_meetinghours,tbl_meeting where MeetingID=ID and creator='"
+                + advisorName + "' and Date='"+hour+"'";
+            int ans = (int)AdoHelper.ExecuteScalar(query);
+            return (ans==0);
+        }
+        internal static void AddMeetingParticipant(int meetingNum, int item)
+        {
+            string query = "INSERT INTO tbl_StudentsInMeetings VALUES (" + item + ", " + meetingNum + ");";
             AdoHelper.ExecuteNonQuery(query);
         }
         internal static void AddMeetingHours(int meetingNum, string item)

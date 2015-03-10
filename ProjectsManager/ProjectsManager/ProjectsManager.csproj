@@ -69,11 +69,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Controller\StudentsDataController.cs" />
+    <Compile Include="Controller\MeetingController.cs" />
     <Compile Include="Controller\TasksController.cs" />
     <Compile Include="Model\Assignment.cs" />
     <Compile Include="Model\Meeting.cs" />
     <Compile Include="Model\MeetingsModel.cs" />
+    <Compile Include="Model\Student.cs" />
     <Compile Include="Model\TasksModel.cs" />
     <Compile Include="View\AssignmentCr.xaml.cs">
       <DependentUpon>AssignmentCr.xaml</DependentUpon>
